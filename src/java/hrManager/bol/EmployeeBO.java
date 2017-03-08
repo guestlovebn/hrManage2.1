@@ -2,11 +2,11 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.bol;
+package hrManager.bol;
 
-import HRManager.ConvertData;
-import HRManager.dal.DAO;
-import HRManager.entities.Employee;
+import hrManager.ConvertData;
+import hrManager.dal.DAO;
+import hrManager.entities.Employee;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -22,8 +22,8 @@ public class EmployeeBO {
         ConvertData cv = new ConvertData();
         String sql = "INSERT INTO Employees(LastName, FirstName, BirthDate, HireDate, Address, City, Country, " +
                 "HomePhone, Mobile, Email, Note) VALUES('" + e.getLastName() + "', '" + e.getFirstName() +
-                "', '" + cv.date2string(e.getBirthDate(), HRManager.ValidData.EN_DATE) +
-                "', '" + cv.date2string(e.getHireDate(), HRManager.ValidData.EN_DATE) + "', '" +
+                "', '" + cv.date2string(e.getBirthDate(), hrManager.ValidData.EN_DATE) +
+                "', '" + cv.date2string(e.getHireDate(), hrManager.ValidData.EN_DATE) + "', '" +
                 e.getAddress() + "', '" + e.getCity() + "', '" + e.getCountry() + "', '" + e.getHomePhone() + "', '" +
                 e.getMobile() + "', '" + e.getEmail() + "', '" + e.getNote() + "')";
         DAO dao = new DAO();
@@ -48,8 +48,8 @@ public class EmployeeBO {
     public int edit(Employee e) {
         ConvertData cv = new ConvertData();
         String sql = "UPDATE Employees SET LastName='" + e.getLastName() + "', FirstName='" + e.getFirstName() +
-                "', BirthDate='" + cv.date2string(e.getBirthDate(), HRManager.ValidData.EN_DATE) +
-                "', HireDate='" + cv.date2string(e.getHireDate(), HRManager.ValidData.EN_DATE) +
+                "', BirthDate='" + cv.date2string(e.getBirthDate(), hrManager.ValidData.EN_DATE) +
+                "', HireDate='" + cv.date2string(e.getHireDate(), hrManager.ValidData.EN_DATE) +
                 "', Address='" + e.getAddress() + "', City='" + e.getCity() + "', Country='" + e.getCountry() +
                 "', HomePhone='" + e.getHomePhone() + "', Mobile='" + e.getMobile() + "', Email='" + e.getEmail() +
                 "', PhotoPath='" + e.getPhotoPath() + "', Note='" + e.getNote() +

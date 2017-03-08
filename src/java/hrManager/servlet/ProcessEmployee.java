@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.servlet;
+package hrManager.servlet;
 
-import HRManager.bol.EmployeeBO;
-import HRManager.entities.Employee;
+import hrManager.bol.EmployeeBO;
+import hrManager.entities.Employee;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,7 +32,7 @@ public class ProcessEmployee extends HttpServlet {
             response.sendRedirect("login.jsp");
             return;
         }
-        EmployeeBO ebo = new HRManager.bol.EmployeeBO();
+        EmployeeBO ebo = new hrManager.bol.EmployeeBO();
         Employee e;
         String action = request.getParameter("action");
         String lB = "";
@@ -77,8 +77,8 @@ public class ProcessEmployee extends HttpServlet {
                 return;
             }
         } else {
-            e = new HRManager.entities.Employee();
-            HRManager.ConvertData convert = new HRManager.ConvertData();
+            e = new hrManager.entities.Employee();
+            hrManager.ConvertData convert = new hrManager.ConvertData();
             e.setFirstName(fName);
             e.setLastName(lName);
             e.setBirthDate(convert.string2date(request.getParameter("txtBirthDate")));

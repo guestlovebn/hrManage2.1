@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.bol;
+package hrManager.bol;
 
-import HRManager.dal.DAO;
-import HRManager.entities.User;
+import hrManager.dal.DAO;
+import hrManager.entities.User;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

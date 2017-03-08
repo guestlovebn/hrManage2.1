@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.entities;
+package hrManager.entities;
 
 import java.util.Date;
 

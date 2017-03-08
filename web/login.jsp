@@ -29,7 +29,7 @@
             <%
                 String error = request.getParameter("error");
             %>
-            <jsp:useBean id="valid" class="HRManager.ValidData" scope="session"/>
+            <jsp:useBean id="valid" class="hrManager.ValidData" scope="session"/>
 
             <table align="center" id="tb2">
                 <form method="post" action="Login">

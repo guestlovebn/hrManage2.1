@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.servlet;
+package hrManager.servlet;
 
-import HRManager.entities.Employee;
+import hrManager.entities.Employee;
 import java.io.IOException;
 import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
@@ -31,7 +31,7 @@ public class EmployeeManager extends HttpServlet {
         if (session.getAttribute("username") == null) {
             response.sendRedirect("login.jsp");
         }
-        HRManager.bol.EmployeeBO ebo = new HRManager.bol.EmployeeBO();
+        hrManager.bol.EmployeeBO ebo = new hrManager.bol.EmployeeBO();
         request.setAttribute("EmpBO", ebo);
         String valueTxt = request.getParameter("txtValue");
         String optionSearch = request.getParameter("ddlSearch");
@@ -50,7 +50,7 @@ public class EmployeeManager extends HttpServlet {
                 }
             }
             //Phần này em tìm hiểu nó sau thầy nhé
-            HRManager.ConvertData convert = new HRManager.ConvertData();
+            hrManager.ConvertData convert = new hrManager.ConvertData();
 
             RequestDispatcher reqdis = request.getRequestDispatcher("employeeManager.jsp");
             if (empList.size() > 0) {

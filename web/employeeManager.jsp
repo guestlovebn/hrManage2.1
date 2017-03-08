@@ -47,7 +47,7 @@
                         <th>Email</th>
                         <th colspan="2"></th>
                     </tr>
-                    <jsp:useBean id="ebo" class="HRManager.bol.EmployeeBO" scope="request"/>
+                    <jsp:useBean id="ebo" class="hrManager.bol.EmployeeBO" scope="request"/>
 
                     <c:if var="searchResult" test="!=null">
                         <c:forEach var="searchResult" items="emp">

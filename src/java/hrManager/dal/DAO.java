@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.dal;
+package hrManager.dal;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -24,13 +24,13 @@ public class DAO {
     private String password;
 
     public DAO() {
-        this.driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        this.urlDriver = "jdbc:sqlserver://";
+        this.driver = "com.mysql.jdbc.Driver";
+        this.urlDriver = "jdbc:mysql://";
         this.hostName = "localhost";
-        this.port = "1433";
+        this.port = "5069";
         this.databaseName = "HrManageCodeRefactoring";
-        this.userName = "sa";
-        this.password = "1";
+        this.userName = "root";
+        this.password = "0412";
         this.openConnection();
     }
 

@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.servlet.ajax;
+package hrManager.servlet.ajax;
 
-import HRManager.ValidData;
+import hrManager.ValidData;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;

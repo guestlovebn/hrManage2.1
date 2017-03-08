@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HRManager.servlet;
+package hrManager.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import HRManager.entities.User;
-import HRManager.bol.UserBO;
+import hrManager.entities.User;
+import hrManager.bol.UserBO;
 import javax.servlet.RequestDispatcher;
 public class Login extends HttpServlet {
 
@@ -26,7 +26,7 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         String userName = request.getParameter("txtUserName");
         String userPassword = request.getParameter("txtPassword");
-        HRManager.ValidData valid = new HRManager.ValidData();
+        hrManager.ValidData valid = new hrManager.ValidData();
         if (userName == null) {
             goPage(request, response, "login.jsp?error=UserName");
         } else if (userPassword == null || !valid.isPassword(userPassword)) {
