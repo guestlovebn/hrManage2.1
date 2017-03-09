@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -26,9 +27,8 @@
         </div>
         <div class="content">
             <br><br>
-            <%
-                String error = request.getParameter("error");
-            %>
+            <c:set value="${paramValues.error}" var="error"/>
+
             <jsp:useBean id="valid" class="hrManager.ValidData" scope="session"/>
 
             <table align="center" id="tb2">
@@ -38,30 +38,34 @@
                     </tr>
                     <tr>
                         <td>User Name: </td>
-                        <td><input type="text" name="txtUserName"></td>
-                            <%
-                                if (error != null && error.equals("UserName")) {
-                                    out.println("<td>Not null...</td>");
-                            }%>
+                        <td>
+                            <input type="text" name="txtUserName"></td
+                            <c:set value="${param.txtUserName}" var="txtUserNameTxt"/>
+                            <c:if test="${txtUserNameTx}!=null">
+                                <c:if test="${error}!=null">
+                                    <c:out value="Not null..."/>
+                                </c:if>
+                            </c:if>
                     </tr>
                     <tr>
                         <td>Password: </td>
-                        <td><input type="password" name="txtPassword"></td>
-                            <%
-                                if (error != null && error.equals("Password")) {
-                                    out.println("<td>Password incorrect!</td>");
-                            }%>
+                        <td>
+                            <input type="password" name="txtPassword"></td>
+                            <c:set value="${param.txtPassword}" var="txtPasswordTxt"/>
+                            <c:if test="${txtPasswordTxt}!=null">
+                                <c:if test="${error}!=null">
+                                    <c:out value="Password invalid or incorrect"/>
+                                </c:if>
+                            </c:if>
                     </tr>
                     <tr>
                         <td colspan="2"><center><input type="submit" name="btnLogin" value="Login"></center></td>
                     </tr>
                 </form>
             </table>
-            <%
-                if (error != null) {
-                    out.println("Login Error!");
-                }
-            %>
+            <c:if test="${error}!=null">
+                <c:out value="Login error"/>
+            </c:if>
         </div>
     </body>
 </html>
